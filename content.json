@@ -1,0 +1,8 @@
+{
+  "appName": "Steuerreform 2015",
+  "headline": "Wieviel verdienen sie durch die neue Steuerreform?",
+  "calculator": {
+    "calculate": "Berechnen",
+    "placeholder": "Brutto Monatsgehalt"
+  }
+}
