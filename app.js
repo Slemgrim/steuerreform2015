@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var exphbs  = require('express3-handlebars');
+var Routes = require('./routes');
 
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
@@ -12,9 +13,7 @@ app.engine('hbs', exphbs({
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function (req, res) {
-    res.render('index');
-});
+var routes = new Routes(app);
 
 var server = app.listen(3000, function () {
 
