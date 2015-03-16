@@ -1,6 +1,8 @@
 <header class="app-header fixed-header">
   <div class="wrap">
     <h1 class="headline">{{headline}}</h1>
-    {{> calculator calculator}}
+    {{#unless noCalc}}
+      {{> calculator calculator}}
+    {{/unless}}
   </div>
 </header>  
