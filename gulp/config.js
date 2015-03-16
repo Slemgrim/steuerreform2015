@@ -1,5 +1,5 @@
-var dest = "./build";
-var src = './src';
+var dest = "./public";
+var src = './client';
 
 module.exports = {
   browserSync: {
@@ -13,7 +13,7 @@ module.exports = {
     dest: dest,
     settings: {
       indentedSyntax: false,
-      imagePath: 'assets/images'
+      imagePath: 'public/assets/images'
     }
   },
 
