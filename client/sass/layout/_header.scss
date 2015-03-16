@@ -4,6 +4,14 @@
   margin: 0;
   padding: 16px 40px 26px;
 
+  &.small{
+    margin: 20px 0 32px;
+
+    .headline {
+      margin: 0;
+    }
+  }
+
   .headline {
     font-size: 35px;
     line-height: 41px;

@@ -3,7 +3,8 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
   res.render('imprint', {
-    noCalc: true
+    noCalc: true,
+    title: 'Impressum'
   });
 });
 
