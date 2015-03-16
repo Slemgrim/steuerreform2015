@@ -1,0 +1,30 @@
+.resp-table {
+  display: table;
+  width: 100%;
+
+  .tr {
+    display: table-row;
+    width: 100%;
+  }
+
+  .td, 
+  .th {
+    display: table-cell;
+  }
+
+  .right {
+    width: 230px;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    display: block;
+
+    .tr,
+    .td, 
+    .th,
+    .right {
+      display: block;
+      width: 100%;
+    }
+  }
+}

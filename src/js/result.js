@@ -1,6 +1,4 @@
-var odometer = require('../../node_modules/odometer/odometer');
- 
-var Result = function($element){
+ var Result = function($element){
 
   var elements = {
       diff: $element.querySelector('.data-diff'),
@@ -10,31 +8,31 @@ var Result = function($element){
       tax2016: $element.querySelector('.data-tax-2016')
   };
 
-  var init = function(){
-    for (var element in elements) {
-      if (elements.hasOwnProperty(element)) {
-        new Odometer({
-          el: elements[element],
-          duration: 100,
-          format: '(.ddd),dd'
-        });
-      }
-    }
-  };
-
   this.show = function(){
     $element.classList.add('show');
   };
 
+  this.hide = function(){
+    $element.classList.remove('show');
+  }
+
   this.set = function(data){
-    elements.diff.innerHTML = data.diff;
-    elements.brutto2015.innerHTML = data.y2015.brutto;
-    elements.brutto2016.innerHTML = data.y2016.brutto;
-    elements.tax2015.innerHTML = data.y2015.tax;
-    elements.tax2016.innerHTML = data.y2016.tax; 
+    elements.diff.innerHTML = numberFormat(data.diff);
+    elements.brutto2015.innerHTML = numberFormat(data.y2015.brutto);
+    elements.brutto2016.innerHTML = numberFormat(data.y2016.brutto);
+    elements.tax2015.innerHTML = numberFormat(data.y2015.tax);
+    elements.tax2016.innerHTML = numberFormat(data.y2016.tax); 
   };
 
-  init();
+  var numberFormat = function(value){
+    if(isNaN(value)){
+      return '';
+    }
+
+    value = Math.round(value * 100) / 100;
+    value = value.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+    return value; 
+  };
 }
 
 module.exports = Result;

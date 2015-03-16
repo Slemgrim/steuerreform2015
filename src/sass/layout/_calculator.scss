@@ -1,0 +1,19 @@
+.calculator {
+  .input, 
+  .button {
+    width: 100%;
+  }
+
+  .submit {
+    width: 230px;
+    padding-left: 8px;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .submit {
+      padding-left: 0;
+      padding-top: 8px;
+    }
+  }
+
+}

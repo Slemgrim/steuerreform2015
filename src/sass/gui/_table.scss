@@ -1,3 +1,22 @@
 .table {
   width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-big;
+  line-height: $font-line-height-big;
+  text-align: right;
+
+  th,
+  td {
+    padding: 10px;
+  } 
+
+  td {
+    border: 1px solid rgba($color-primary, 0.15);
+  }
+
+  tr:nth-child(even) {
+    td {
+      background: rgba($color-primary, 0.1);
+    }
+  }
 }

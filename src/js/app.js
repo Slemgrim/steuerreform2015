@@ -34,6 +34,11 @@ var calcForm = new CalcForm($calcForm, function(inputs){
     },
     diff: diff
   });
-  result.show();
+
+  if(!isNaN(diff)){
+    result.show();
+  } else {
+    result.hide();
+  }
 });
 

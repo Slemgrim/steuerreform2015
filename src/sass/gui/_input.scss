@@ -1,0 +1,33 @@
+.input {
+  background: $color-background;
+  border-radius: 6px;
+  border: none;
+  color: $color-text;
+  font-size: $font-size-big;
+  line-height: $font-line-height-big;
+  padding: 18px 18px 20px;
+  font-weight: 100;
+  display: inline-block;
+  margin: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  ::-webkit-input-placeholder {
+    font-weight: 100;
+    color: red;
+  }
+
+  :-moz-placeholder {
+    font-weight: 100;
+  }
+
+  ::-moz-placeholder {
+    font-weight: 100;
+  }
+
+  :-ms-input-placeholder {  
+    font-weight: 100;
+  }
+}

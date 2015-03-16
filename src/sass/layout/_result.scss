@@ -1,7 +1,64 @@
 .result {
   display: none;
+  font-size: $font-size-big;
+  line-height: $font-line-height-big;
+  font-weight: 100;
 
   &.show {
     display: block;
+  }
+
+  .result-table {
+    width: 100%;
+  }
+
+  th {
+    font-weight: normal;
+  }
+
+  th,
+  td {
+    text-align: right;
+    padding: 9px 0;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .result-message {
+    margin: 44px 0 14px; 
+  }
+
+  .result-message .td {
+    background-color: $color-primary;
+    color: $color-primary-text;
+    padding: 22px 20px;
+    border-radius: 6px 0 0 6px;
+
+    &.data-diff {
+      background-color: $color-accent;
+      padding: 22px 8px;
+      text-align: center;
+      border-radius: 0 6px 6px 0;
+      font-size: 25px;
+    }
+  }
+
+  .meta {
+    font-size: $font-size-small;
+    line-height: $font-line-height-small;
+    color: $color-neutral;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .result-message .td {
+      text-align: center;
+      border-radius: 6px 6px 0 0;
+
+      &.data-diff {
+        border-radius: 0 0  6px 6px;
+      }
+    }
   }
 }

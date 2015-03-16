@@ -12,6 +12,7 @@ body {
   font-size: $font-size-default;
   line-height: $font-line-height-default;
   color: $color-text;
+  font-weight: 100;
 }
 
 .app {
@@ -22,14 +23,20 @@ body {
   }
 
   .section {
-    padding: 30px 0; 
+    padding: 30px 0 0; 
   }
 
   .container {
     min-height: 100%;
     margin-bottom: -$dim-footer-height;
-    padding-bottom: $dim-footer-height;
+    padding-bottom: $dim-footer-height + 60px;
+  }
+
+  .content {
+    padding: 0 40px;
+
+    @media (max-width: $breakpoint-md) {
+      padding: 0 20px;
+    }
   }
 }
-
-

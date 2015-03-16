@@ -1,4 +1,19 @@
 .app-footer {
-  text-align: center;
   height: $dim-footer-height;
+  background-color: $color-primary;
+  line-height: 80px;
+  padding: 0 40px;
+
+  .anchor {
+    color: $color-primary-text;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0 20px;
+  }
 }

@@ -1,0 +1,7 @@
+.min-tablet {
+  display: none;
+
+  @media (max-width: $breakpoint-md) {
+    display: inline-block;
+  }
+}
