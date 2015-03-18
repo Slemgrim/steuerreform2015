@@ -1,6 +1,8 @@
 var CalcForm = function($form, callback){
 
-  var $brutto = $form.querySelector('[name=brutto]');
+  var $brutto = $form.querySelector('[name=brutto]'),
+      debounce = 400,
+      debounceTimeout = false;
 
   var init = function(){
     eventBindings();
@@ -13,20 +15,45 @@ var CalcForm = function($form, callback){
 
   var onCalculate = function(event){
     event.preventDefault();
-    var brutto = $brutto.value.trim();
+    var brutto = parseFloat($brutto.value.trim());
 
-    var isValid = true; //TODO: check for positive int/float
-
-    if(isValid && callback !== undefined){
-      callback({
-        brutto: {
-          year: brutto * 12,
-          month: brutto
-        }
-      });
+    if(callback == undefined){
+      return;
     }
 
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(function(){
+      if(isValid(brutto)){
+        callback({
+          success: true,
+          brutto: {
+            year: brutto * 12,
+            month: brutto
+          }
+        });
+      } else {
+        callback({
+          success: false
+        });
+      }
+    }, debounce);
   };
+
+  var formatNumber = function(number){
+    number = number.replace(/\./g, '');
+    number = number.replace(',', '.');
+    return number;
+  };
+
+  var isValid = function(number){
+    if(isNaN(number) || number <= 0){
+      console.log('false');
+      return false;
+    }
+
+    return true;
+  };
+
 
   init();
 }

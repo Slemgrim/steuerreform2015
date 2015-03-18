@@ -1,18 +1,91 @@
 <section class="wrap section">
-<h2>Oh Wow</h2>
-<p>
-orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. 
-</p>
-<h2>Oh such title</h2>
-<p>
-orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla <a href="adfs">consequat massa quis enim. </a>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. 
-</p>
 
+  <h2>Steuerreform 2015</h2>
 
+  <p>
+    Die Österreichische Regierung hat am 17.03.2015 im Zuge des Beschlusses der Steuerreform die Inhalte der neuen Steuerreform festgelegt. Zentrales Element ist die Senkung der Lohnsteuer, weitere Entlastungen gibt es beim Verkehrsabsetzbetrag, der Pendlerpauschale und dem Kinderfreibetrag. Die Reform tritt Anfang 2016 in Kraft.
+  </p>
 
-<p>
-orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla <a href="adfs">consequat massa quis enim. </a>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. 
-</p>
+  <h2>Änderung der Tarifstufen</h2>
 
+  <p>
+    Die neue Reform bringt 6 neue Tarifstufen (anstelle von 3 wie bisher). Einkommen unter 11.000 € bleiben weiterhin Steuerfrei. Besonders profitieren Gehälter zwischen 11.000 € und 31.000 € mit einer Besteuerung von 25% in der ersten Stufe und 35% in der zweiten Stufe. Wesentlich teurer wird es für die Großverdiener mit 55% Besteuerung ab einem Lohnsteurpflichtigen Jahreshgehalt von 1.000.000 €.
+    Im Schnitt ergibt das eine Entlastung von rund 1.000 € für jeden Steuerzahler.
+  </p>
+
+  <h2>Tarifstufen Neu (ab 2016)</h2>
+
+  {{> rate-table rates2016}}
+
+  <h2>Tarifstufen Alt</h2>
+
+  {{> rate-table rates2015}}
+
+  <h2>Berechnung</h2>
+
+  <p>
+  Die Berechnungsformeln zur Lohnsteuer sind im <a target="_blank" href="http://www.ris.bka.gv.at/Ergebnis.wxe?Abfrage=Bundesnormen&Titel=EStG&VonParagraf=66">Einkommensteuergesetz §66</a> festgelegt. Die Lohnsteuer wird durch die Anwendung des Einkommensteuertarifes ermittelt. Das Einkommen wird auf das Jahreseinkommen (12 Monate) hochgerechnet. Dieser Lohnsteuerbetrag wird vor der eigentlichen Rechnung um  die <a target="_blank" href="https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Bundesnormen&Dokumentnummer=NOR40115100">Absetzbeträge</a> gekürzt.
+  </p>
+  <p>
+  (Das 13. und 14. Monatsgehalt wird in Österreich mit 6% besteuert.)
+  </p>
+
+  <h3>Berechnungsformel:</h3>
+
+  <div class="code">
+    <img class="center" alt="(J - U) * G / 100 + Max" title="Lohnsteuer Formel" src="/images/formel.png">
+
+    <dl class="legend">
+      <dt>J</dt>
+      <dd>Steuerpflichtiges Jahresgehalt</dd>
+      <dt>U</dt>
+      <dd>Untere Grenze der Tarifstufe</dd>
+      <dt>G</dt>
+      <dd>Grenzsteuersatz</dd>
+      <dt>Max</dt>
+      <dd>Maximale Lohnsteuer der vorhergehenden Tarifstufe</dd>
+    </dl>
+  </div>
+
+  <h2>Beispiele</h2>
+
+  <p>Bei einem steuerpflichtigen Jahresgehalt von <strong>25.000 €</strong> befinden Sie sich in der Tarifstufe 18.000 € - 31.000 €</p>
+
+  <div class="code">
+    <img class="center" alt="(25.000 - 18.000) * 35 / 100 + 1.750" title="Lohnsteuer Formel für 25.000 €" src="/images/formel-25000.png">
+  </div>
+
+  <p>Daraus ergibt sich eine Lohnsteuer von <strong>4.200 €</strong></p>
+
+  <img class="max-tablet" src="/images/beispiel-25000.png" title="Beispiel für 25.000 €">
+
+  <p>Bei einem steuerpflichtigen Jahresgehalt von <strong>45.000 €</strong> befinden Sie sich in der 
+  Tarifstufe 31.000 € - 60.000 €</p>
+
+  <div class="code">
+    <img class="center" alt="(45.000 - 60.000) * 42 / 100 + 18.480" title="Lohnsteuer Formel für 45.000 €" src="/images/formel-45000.png">
+  </div>
+
+  <p>Daraus ergibt sich eine Lohnsteuer von <strong>12.180 €</strong></p>
+
+  <img class="max-tablet" src="/images/beispiel-45000.png" title="Beispiel für 45.000 €">
+
+  <h2>Weitere Entlastungen der Steuerreform</h2>
+
+  <ul>
+    <li>Absetzbeträge für Arbeitnehmer erhöhen sich von 345 € auf 400 €</li>
+    <li>Pendlerzuschlag für Geringverdiener wird erhöht</li>
+    <li>Der Kinderabsetzbetrag erhöht sich von 220 € auf 440 € pro Kind</li>
+    <li>Arbeitnehmer, die keine Einkommenssteuer bezahlen, werden 50 Prozent der Sozialversicherung gut geschrieben. (maximal 400 €/Jahr)<br>
+    Pensionisten bekommen maximal 110 € rückerstattet.</li>
+  </ul>
+
+  <h2>Weiterführende Links</h2>
+
+  <ul>
+    <li><a target="_blank" href="http://www.format.at/politik/oesterreich/steuerreform-details-5553542">Detailierter Überblick über die Steuerreform </a></li>
+    <li><a target="_blank" href="https://mehrnetto.arbeiterkammer.at/">Rechner der Arbeiterkammer</a></li>
+    <li><a target="_blank" href="http://www.oegb.at/cms/S06/S06_1.2/themen/lohnsteuer-runter">Steuerreform Infos der ÖGB</a></li>
+    <li><a target="_blank" href="http://www.karriere.at/c/brutto-netto-rechner">karriere.at Brutto-Netto-Rechner</a></li>
+  </ul>
 </section>
-

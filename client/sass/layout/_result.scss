@@ -28,6 +28,11 @@
 
   .result-message {
     margin: 44px 0 14px; 
+    display: none;
+
+    &.show {
+      display: table;
+    }
   }
 
   .result-message .td {
@@ -42,6 +47,12 @@
       text-align: center;
       border-radius: 0 6px 6px 0;
       font-size: 25px;
+    }
+  }
+
+  .result-message.negative .td {
+    &.data-diff {
+      background-color: $color-error;
     }
   }
 

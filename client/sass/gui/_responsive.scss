@@ -5,3 +5,11 @@
     display: inline-block;
   }
 }
+
+.max-tablet {
+  display: inline-block;
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}

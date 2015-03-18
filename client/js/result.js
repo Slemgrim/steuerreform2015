@@ -1,11 +1,13 @@
  var Result = function($element){
 
   var elements = {
-      diff: $element.querySelector('.data-diff'),
+      diff: $element.querySelectorAll('.data-diff'),
       brutto2015: $element.querySelector('.data-brutto-2015'),
       brutto2016: $element.querySelector('.data-brutto-2016'),
       tax2015: $element.querySelector('.data-tax-2015'),
-      tax2016: $element.querySelector('.data-tax-2016')
+      tax2016: $element.querySelector('.data-tax-2016'),
+      positive: $element.querySelector('.positive'),
+      negative: $element.querySelector('.negative')
   };
 
   this.show = function(){
@@ -17,7 +19,18 @@
   }
 
   this.set = function(data){
-    elements.diff.innerHTML = numberFormat(data.diff);
+    for(var i = 0; i < elements.diff.length; i++){
+      elements.diff[i].innerHTML = numberFormat(data.diff);
+    }
+
+    if(data.diff >= 0){
+      elements.positive.classList.add('show');
+      elements.negative.classList.remove('show');
+    } else {
+      elements.positive.classList.remove('show');
+      elements.negative.classList.add('show');
+    }
+
     elements.brutto2015.innerHTML = numberFormat(data.y2015.brutto);
     elements.brutto2016.innerHTML = numberFormat(data.y2016.brutto);
     elements.tax2015.innerHTML = numberFormat(data.y2015.tax);

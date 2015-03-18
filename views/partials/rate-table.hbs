@@ -1,0 +1,19 @@
+<table class="table">
+  <tr>
+    <th>Einkommen</th>
+    <th>Grenzsteuersatz</th>
+    <th>Maximale Lohnsteuer</th>
+  </tr>
+
+  {{#each this}}
+    <tr>
+      <td>
+        {{#unless max}}mehr als{{/unless}}
+
+        {{moneyFormat min}}{{#if max}} - {{moneyFormat max}}{{/if}}
+        </td>
+      <td>{{#if tax}}{{tax}} %{{else}}Steuerfrei{{/if}}</td>
+      <td>{{calculator max ../this}}</td>
+    </tr>
+  {{/each}}
+</table>
