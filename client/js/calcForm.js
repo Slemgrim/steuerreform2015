@@ -47,7 +47,6 @@ var CalcForm = function($form, callback){
 
   var isValid = function(number){
     if(isNaN(number) || number <= 0){
-      console.log('false');
       return false;
     }
 
