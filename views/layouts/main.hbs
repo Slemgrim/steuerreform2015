@@ -12,10 +12,11 @@
 
   <body class="app">
     <div class="container">
-      {{> header}} 
+      {{> header this}} 
       <div class="content">
         {{{body}}}
-      </div> 
+        
+      </div>
     </div>  
     {{> footer}}
     <script src="/app.js"></script>

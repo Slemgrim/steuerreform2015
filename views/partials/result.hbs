@@ -1,4 +1,4 @@
-<section class="section result wrap">
+<section class="section result wrap {{#if show}}show{{/if}}">
   <div class="resp-table">
     <div class="tr">
       <div class="td">
@@ -10,12 +10,12 @@
 
           <tr>
             <th class="title">Brutto</th>
-            <td class="data-brutto-2015"></td>
+            <td class="data-brutto-2015">{{moneyFormat brutto2015}}</td>
           </tr>
 
           <tr>
             <th class="title">Lohnsteuer</th>
-            <td class="data-tax-2015"></td>
+            <td class="data-tax-2015">{{moneyFormat tax2015}}</td>
           </tr>
         </table>
       </div>
@@ -28,12 +28,12 @@
 
           <tr>
             <th class="title min-tablet">Brutto</th>
-            <td class="data-brutto-2016"></td>
+            <td class="data-brutto-2016">{{moneyFormat brutto2016}}</td>
           </tr>
-
+ 
           <tr>
             <th class="title min-tablet">Lohnsteuer</th>
-            <td class="data-tax-2016"></td>
+            <td class="data-tax-2016">{{moneyFormat tax2016}}</td>
           </tr>
         </table>
       </div>
@@ -43,14 +43,14 @@
   <div class="resp-table positive result-message show">
     <div class="tr">
       <div class="td">Ab 2016 sparen Sie jährlich: </div>
-      <div class="td right data-diff"></div>
+      <div class="td right data-diff">{{moneyFormat diff}}</div>
     </div>
   </div>
 
   <div class="resp-table negative result-message">
     <div class="tr">
       <div class="td">Ab 2016 verlieren sie jährlich: </div>
-      <div class="td right data-diff"></div>
+      <div class="td right data-diff">{{moneyFormat diff}}</div>
     </div>
   </div>
 

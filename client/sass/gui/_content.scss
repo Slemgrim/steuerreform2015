@@ -3,12 +3,12 @@
   line-height: $font-line-height-default;
   font-weight: 100;
 
-  .h1, h2 {
+  h1, h2 {
     font-size: $font-size-heading1;
     line-height: $font-line-height-heading1;
     font-weight: normal;
   }
-
+ 
   a {
     color: $color-primary-light;
     text-decoration: none;

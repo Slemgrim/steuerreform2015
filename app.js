@@ -14,7 +14,10 @@ var hbs = exphbs.create({
     partialsDir: "views/partials/",
     helpers: {
         moneyFormat: moneyFormat,
-        calculator: calculator
+        calculator: calculator,
+        log: function(data){
+          console.log(data);
+        }
     }
 });
 

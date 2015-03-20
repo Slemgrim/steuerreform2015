@@ -1,62 +1,22 @@
 <section class="wrap section">
-  <h2>Andere Beträge</h2>
+  <h2>Ersparnis bei ähnlichen Gehältern</h2>
 
   <table class="table">
     <tr>
       <th>Brutto</th>
-      <th>2015</th>
-      <th>2016</th>
-      <th>Ersparniss</th>
+      <th>Lohsnteuer 2015</th>
+      <th>Lohnsteuer 2016</th>
+      <th>Jährliche Ersparniss</th>
     </tr>
 
-    <tr>
-      <td>2.700,00 €</td>
-      <td>10.000,00 €</td>
-      <td>11.000,00 €</td>
-      <td>1.000,00 €</td>
-    </tr>
-
-    <tr>
-      <td>2.800,00 €</td>
-      <td>10.000,00 €</td>
-      <td>11.000,00 €</td>
-      <td>1.000,00 €</td>
-    </tr>
-
-    <tr>
-      <td>2.900,00 €</td>
-      <td>10.000,00 €</td>
-      <td>11.000,00 €</td>
-      <td>1.000,00 €</td>
-    </tr>
-
-    <tr>
-      <td>3.000,00 €</td>
-      <td>10.000,00 €</td>
-      <td>11.000,00 €</td>
-      <td>1.000,00 €</td>
-    </tr>
-
-    <tr>
-      <td>3.100,00 €</td>
-      <td>10.000,00 €</td>
-      <td>11.000,00 €</td>
-      <td>1.000,00 €</td>
-    </tr>
-
-    <tr>
-      <td>3.200,00 €</td>
-      <td>10.000,00 €</td>
-      <td>11.000,00 €</td>
-      <td>1.000,00 €</td>
-    </tr>
-
-    <tr>
-      <td>3.300,00 €</td>
-      <td>10.000,00 €</td>
-      <td>11.000,00 €</td>
-      <td>1.000,00 €</td>
-    </tr>
+    {{#each this}}
+      <tr>
+        <td><a href="/brutto/{{brutto}}">{{moneyFormat brutto}}</a></td>
+        <td>{{moneyFormat tax2015}}</td>
+        <td>{{moneyFormat tax2016}}</td>
+        <td><strong>{{moneyFormat diff}}</strong></td>
+      </tr>
+    {{/each}}
   </table>
 </section>
 
