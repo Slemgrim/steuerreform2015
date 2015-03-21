@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var exphbs  = require('express3-handlebars');
+var exphbs  = require('express-handlebars');
 var Routes = require('./routes');
 
 /* Helpers */
